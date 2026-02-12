@@ -25,6 +25,7 @@ buildPythonPackage rec {
     sha256 = "sha256-CrQVmdAJZ2751ymPuaUn7is5/XC5G3capRUFsw9hnyo=";
   };
 
+  # uncleanly patch pyproject.toml to build with poetry-core, TODO prettify
   postPatch = ''
     sed -i 's/poetry.masonry/poetry.core.masonry/g' pyproject.toml
     sed -i 's/"poetry>=0.12"//g' pyproject.toml
@@ -48,6 +49,5 @@ buildPythonPackage rec {
     pyqtgraph
     pyaudio
     horusdemodlib
-    #poetry
   ];
 }

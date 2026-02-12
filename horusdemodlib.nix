@@ -14,6 +14,7 @@
 }:
 
 let
+  # horusdemodlib requires asn1tools = "^0.165.0", while nixpkgs is at asn1tools = ">=0.167.0"
   asn1tools-0_165_0 = asn1tools.overridePythonAttrs (old: rec {
     version = "0.165.0";
     src = fetchPypi {
